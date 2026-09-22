@@ -1,35 +1,268 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Documentos Van 160</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: helvetica, arial, sans-serif;
+    }
     body {
-      font-family: Arial, sans-serif;
-      background: #f8f8f8;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #064e3b, #14532d);
+      color: #fff;
+      padding: 30px 20px;
+    }
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+    }
+    .header {
       text-align: center;
-      padding: 40px;
+      margin-bottom: 35px;
     }
-    a {
-      display: block;
-      background: green;
-      color: white;
-      margin: 10px auto;
-      padding: 12px;
-      width: 250px;
-      border-radius: 8px;
+    .icone-van {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ca8a04;
+      border: 1px solid rgba(250, 204, 21, 0.3);
+      border-radius: 22px;
+      font-size: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+    .header h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    .header p {
+      color: #d1fae5;
+      font-size: 15px;
+    }
+    .painel {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      padding: 25px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+    .titulo-documentos {
+      position: relative;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .documentos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    .documento {
+      display: flex;
+      align-items: center;
+      padding: 18px;
+      background: rgba(1, 149, 1, 0.136);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
       text-decoration: none;
+      color: white;
+      transition: all 0.25s ease;
     }
-    a:hover {
-      background: green;
+    .documento:hover {
+      transform: translateY(-4px);
+      background: rgba(87, 237, 12, 0.294);
+      border-color: rgba(8, 227, 0, 0.207);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    .icone-documento {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #6c8015;
+      border-radius: 14px;
+      font-size: 24px;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    .icone-crlv {
+      background: #ca8a04
+    }
+    .icone-atf {
+      background: #ca8a04;
+    }
+    .icone-seguro {
+      background: #ca8a04;
+      
+    }
+    .disco-tacografo {
+      background: #ca8a04;
+    }
+    .disco {
+      width: 32px;
+      height: 32px;
+      border: 3px solid white;
+      border-radius: 50%;
+      position: relative;
+      background:
+        repeating-conic-gradient(
+          from 0deg,
+          transparent 0deg 28deg,
+          rgba(255, 255, 255, 0.8) 29deg 30deg
+        );
+    }
+    .disco::before {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+    }
+    .centro {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      background: white;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .info {
+      flex: 1;
+      text-align: left;
+    }
+    .info h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    .info span {
+      color: #a7f3d0;
+      font-size: 12px;
+    }
+    .seta {
+      font-size: 22px;
+      color: #86efac;
+      transition: 0.2s;
+    }
+    footer {
+      text-align: center;
+      margin-top: 25px;
+      color: #cdf2da;
+      font-size: 12px;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 15px;
+      }
+      .header h1 {
+        font-size: 26px;
+      }
+      .painel {
+        padding: 18px;
+      }
+      .documentos {
+        grid-template-columns: 1fr;
+      }
+      .titulo-documentos {
+        align-items: flex-start;
+        gap: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Documentos Van 160</h1>
-  <a href="CRLV_VAN_160.pdf">CRLV</a>
-  <a href="CRONOTACOGRAFO_VAN_160.pdf">CRONOTACOGRAFO</a>
-  <a href="ATF.pdf">ATFs</a>
-  <a href="Seguro_VAN_160.pdf">Seguro</a>
+  <div class="container">
+    <header class="header">
+      <div class="icone-van">
+        🚐
+      </div>
+      <h1>Documentos Van 160</h1>
+      <p>Acesso rápido aos documentos do veículo</p>
+    </header>
+    <main class="painel">
+      <div class="titulo-documentos">
+        <h2>Documentação</h2>
+      </div>
+      <div class="documentos">
+        <a class="documento" href="CRLV_VAN_160.pdf" target="_blank">
+          <div class="icone-documento icone-crlv">
+            📄
+          </div>
+          <div class="info">
+            <h3>CRLV</h3>
+            <span>Certificado de Registro e Licenciamento</span>
+          </div>
+          <div class="seta">
+            →
+          </div>
+        </a>
+        <a class="documento" href="CRONOTACOGRAFO_VAN_160.pdf" target="_blank">
+          <div class="icone-documento disco-tacografo">
+            <div class="disco">
+              <div class="centro"></div>
+            </div>
+          </div>
+          <div class="info">
+            <h3>CRONOTACÓGRAFO</h3>
+            <span>Documento tacógrafo</span>
+          </div>
+          <div class="seta">
+            →
+          </div>
+        </a>
+        <a class="documento" href="ATF_CONTAGEM.pdf" target="_blank">
+          <div class="icone-documento icone-atf">
+            📋
+          </div>
+          <div class="info">
+            <h3>ATF CONTAGEM</h3>
+            <span>Autorização de Transporte</span>
+          </div>
+          <div class="seta">
+            →
+          </div>
+        </a>
+        <a class="documento" href="ATF_POUSO_ALEGRE.pdf" target="_blank">
+          <div class="icone-documento icone-atf">
+            📋
+          </div>
+          <div class="info">
+            <h3>ATF POUSO ALEGRE</h3>
+            <span>Autorização de Transporte</span>
+          </div>
+          <div class="seta">
+            →
+          </div>
+        </a>
+        <a class="documento" href="Seguro_VAN_160.pdf" target="_blank">
+          <div class="icone-documento icone-seguro">
+            📋
+          </div>
+          <div class="info">
+            <h3>SEGURO</h3>
+            <span>Documento do seguro do veículo</span>
+          </div>
+          <div class="seta">
+            →
+          </div>
+        </a>
+      </div>
+    </main>
+    <footer>
+      Documentos do veículo • Van 160<br><br>
+      Mactur Fretamento LTDA
+    </footer>
+  </div>
 </body>
 </html>
